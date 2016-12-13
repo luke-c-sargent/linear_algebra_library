@@ -43,6 +43,9 @@ void test_vector2(){
 	isequal(Vector2(1,2)+Vector2(1,-1), Vector2(2,1));
 	isequal(stringify(Vector2(1,2)), stringify("< 1, 2 >"));
 
+	isequal(Vector2(3,5)*.5, Vector2(1.5,2.5));
+	isequal(-Vector2(-10,10), Vector2(10,-10));
+
 	if(msg_sz==error_msgs.size())
 		error_msgs.push_back("\tnone!");
 }

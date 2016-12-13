@@ -27,10 +27,23 @@ public:
 	}
 
 	friend std::ostream& operator << (std::ostream& os, const Vector2& v2);
+	friend Vector2 operator * (float scalar, const Vector2& v2);
+	Vector2 operator * (float scalar) const {
+		return scalar*(*this);
+	}
+
+	Vector2 operator - () const {
+		return -1*(*this);
+	}
 };
 
 std::ostream& operator << (std::ostream& os, const Vector2& v2){
 		os << "< " << v2.x << ", " << v2.y << " >"; 
+}
+
+Vector2 operator * (float scalar, const Vector2& v2){
+	return Vector2(scalar*v2.x, scalar*v2.y);
+
 }
 
 class Vector3
