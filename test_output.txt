@@ -1,0 +1,22 @@
+----[Linear Algebra Library Test Suite]---
+Vector2 Tests:
+	SUCCESS: 0 == 0
+	SUCCESS: 0 == 0
+	SUCCESS: 1 == 1
+	SUCCESS: 2 == 2
+	SUCCESS: 3 == 3
+	SUCCESS: 4 == 4
+	SUCCESS: < 2, 1 > == < 2, 1 >
+	SUCCESS: < 1, 2 > == < 1, 2 >
+	SUCCESS: < 1.5, 2.5 > == < 1.5, 2.5 >
+	SUCCESS: < 10, -10 > == < 10, -10 >
+	SUCCESS: < 0, 0 > == < 0, 0 >
+	SUCCESS: 0 == 0
+	SUCCESS: 6.40312 == 6.40312
+	SUCCESS: 100.045 == 100.045
+	SUCCESS: 1 == 1
+	SUCCESS: 1 == 1
+	SUCCESS: < -666, 777 > == < -666, 777 >
+	SUCCESS: 23 == 23
+	SUCCESS: 23 == 23
+	SUCCESS: 0.321751 == 0.321751
