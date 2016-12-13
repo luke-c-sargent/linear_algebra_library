@@ -4,8 +4,21 @@ HEADERS :=					\
 	./Vectors/Vector2.h 	\
 	./Vectors/Vector3.h 	\
 	./Vectors/Vector4.h
-SOURCES:=					\
-	test.c++
+
+SOURCES :=					\
+	./Vectors/Vector2.c++	\
+	./Vectors/Vector3.c++
+
+TESTHEADERS:=							\
+	test_utils.hpp						\
+	./Vectors/Tests/Vector2_Test.h 		\
+	./Vectors/Tests/Vector3_Test.h
+
+TESTSOURCES:=							\
+	test.c++							\
+	test_utils.c++						\
+	./Vectors/Tests/Vector2_Test.c++ 	\
+	./Vectors/Tests/Vector3_Test.c++
 
 G++FLAGS := -pedantic
 C++STD= c++11
@@ -13,16 +26,16 @@ OUTPUTFILE= test_output.txt
 
 TESTBINARY:= test_exec
 
-test: $(HEADERS) $(SOURCES)
+test: $(HEADERS) $(SOURCES) $(TESTBINARY)
 # execution conditional on successful compilation
 	@rm -f $(OUTPUTFILE)
-ifeq ($(shell g++ $(HEADERS) $(SOURCES) $(TESTFILE) -o $(TESTBINARY) -std=$(C++STD) $(G++FLAGS); echo $$?),0)
+ifeq ($(shell g++ $(HEADERS) $(TESTHEADERS) $(SOURCES) $(TESTSOURCES) $(TESTFILE) -o $(TESTBINARY) -std=$(C++STD) $(G++FLAGS); echo $$?),0)
 	@echo "${BOLD}${GREENFG}Compilation successful${WHITEFG}, executing compiled binary '$(TESTBINARY)'...${RESETCOLOR}\n"
 	@./$(TESTBINARY) > test_output.txt 2>&1
 	@echo "Output (stored in '${YELLOWFG}$(OUTPUTFILE)${RESETCOLOR}'):\n"
 	@cat $(OUTPUTFILE)
 else
-	@echo "\n*** ${REDFG}${WHITEBG}Compilation failed${RESETCOLOR}: execution suppressed and $(OUTPUTFILE) removed***"
+	@echo "\n*** ${REDFG}${WHITEBG}Compilation failed${RESETCOLOR}: execution suppressed, $(OUTPUTFILE) and $(TESTBINARY) removed***"
 endif
 
 #text decoration variables

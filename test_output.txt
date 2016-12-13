@@ -1,14 +1,19 @@
 ----[Linear Algebra Library Test Suite]---
+	prefix symbols:
+	!! = test failure
+	DR = double rounding; possibly inaccurate
 Vector2 Tests:
 	SUCCESS: 0 == 0
 	SUCCESS: 0 == 0
 	SUCCESS: 1 == 1
 	SUCCESS: 2 == 2
-	SUCCESS: 3 == 3
-	SUCCESS: 4 == 4
+	SUCCESS: 1 == 1
+	SUCCESS: 0 == 0
+	SUCCESS: < 3, 4 > == < 3, 4 >
 	SUCCESS: < 2, 1 > == < 2, 1 >
 	SUCCESS: < 1, 2 > == < 1, 2 >
 	SUCCESS: < 1.5, 2.5 > == < 1.5, 2.5 >
+	SUCCESS: < 2, 4 > == < 2, 4 >
 	SUCCESS: < 10, -10 > == < 10, -10 >
 	SUCCESS: < 0, 0 > == < 0, 0 >
 	SUCCESS: 0 == 0
@@ -22,3 +27,29 @@ Vector2 Tests:
 	SUCCESS: 0.321751 == 0.321751
 	SUCCESS: 1 == 1
 	SUCCESS: 0 == 0
+END Vector2 Tests-------------------------
+
+Vector3 Tests:
+	SUCCESS: 0 == 0
+	SUCCESS: 0 == 0
+	SUCCESS: 0 == 0
+	SUCCESS: -1 == -1
+	SUCCESS: 2 == 2
+	SUCCESS: -3 == -3
+	SUCCESS: 1 == 1
+	SUCCESS: 0 == 0
+	SUCCESS: < 6, 6, 6 > == < 6, 6, 6 >
+	SUCCESS: < 2, 2, 2 > == < 2, 2, 2 >
+	SUCCESS: < 7, 7, 7 > == < 7, 7, 7 >
+	SUCCESS: < 2, 4, 6 > == < 2, 4, 6 >
+	SUCCESS: < 3, 3, 3 > == < 3, 3, 3 >
+	SUCCESS: < 10, -10, 20 > == < 10, -10, 20 >
+	SUCCESS: < 5, 5, 5 > == < 5, 5, 5 >
+	SUCCESS: 0 == 0
+	SUCCESS: 3.4641 == 3.4641
+	SUCCESS: 56.3028 == 56.3028
+	SUCCESS: 1 == 1
+DR	SUCCESS: 1 == 1
+	SUCCESS: < -5, 0, 10 > == < -5, 0, 10 >
+END Vector3 Tests-------------------------
+
