@@ -14,15 +14,15 @@ public:
 	void set_x(float _x){x=_x;}
 	void set_y(float _y){y=_y;}
 
-	Vector2 operator +(const Vector2& v2){
+	Vector2 operator +(const Vector2& v2) const {
 		return Vector2(this->x + v2.get_x(), this->y + v2.get_y());
 	}
 
-	bool operator == (const Vector2& v2){
+	bool operator == (const Vector2& v2) const {
 		return (this->x == v2.get_x()) && (this->y == v2.get_y());
 	}
 
-	bool operator != (const Vector2& v2){
+	bool operator != (const Vector2& v2) const {
 		return !(*this == v2);
 	}
 
@@ -34,6 +34,10 @@ public:
 
 	Vector2 operator - () const {
 		return -1*(*this);
+	}
+
+	Vector2 operator -(const Vector2& v2) const {
+		return (*this) + (-v2);
 	}
 };
 

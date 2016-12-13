@@ -46,6 +46,8 @@ void test_vector2(){
 	isequal(Vector2(3,5)*.5, Vector2(1.5,2.5));
 	isequal(-Vector2(-10,10), Vector2(10,-10));
 
+	isequal(Vector2(0,0), Vector2(100,100) - Vector2(100,100));
+
 	if(msg_sz==error_msgs.size())
 		error_msgs.push_back("\tnone!");
 }
