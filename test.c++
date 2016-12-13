@@ -64,8 +64,28 @@ void test_vector2(){
 
 	//normalize vector
 	Vector2 v2_d(100,-3);
-	v2_d.normalize();
+	double mag_from_fn = v2_d.magnitude();
+	double mag_from_nrm = v2_d.normalize();
+	isequal(mag_from_fn, mag_from_nrm);
 	isequal(v2_d.magnitude(),1.0);
+
+	//get unit vector
+	Vector2 v2_e(-666,777);
+	Vector2 unit = v2_e.unit_vector();
+	isequal(unit.magnitude(), 1.0);
+	isequal(unit*v2_e.magnitude(),v2_e);
+
+	//dot product
+	Vector2 dp1(2,3);
+	Vector2 dp2(4,5);
+	isequal(dp1.dot_product(dp2), 2.0*4.0 + 3.0*5.0);
+	//		commutativity
+	isequal(dp1.dot_product(dp2), dp2.dot_product(dp1));
+
+	//planar angle, in radians
+	Vector2 pa1(1,2);
+	Vector2 pa2(2,2);
+	isequal(planar_angle(pa1,pa2),0.3217505543966423); // value from wolframalpha
 }
 
 void test_vector3(){
