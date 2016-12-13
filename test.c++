@@ -7,6 +7,10 @@
 
 using namespace LAL;
 
+// TEST SUITE:
+//		Tests class construction, their member functions, and supporting functions.
+//		Output stored in 'test_output.txt' upon successful execution.
+
 template<class T>
 std::string stringify(const T& t)
 {
