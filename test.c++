@@ -90,6 +90,13 @@ void test_vector2(){
 	Vector2 pa1(1,2);
 	Vector2 pa2(2,2);
 	isequal(planar_angle(pa1,pa2),0.3217505543966423); // value from wolframalpha
+
+	//vector orthogonality
+	Vector2 ortho1(1,2);
+	Vector2 ortho2(2,-1);
+	Vector2 not_ortho(1,1);
+	isequal(are_orthogonal(ortho1, ortho2), true);
+	isequal(are_orthogonal(ortho1, not_ortho), false);
 }
 
 void test_vector3(){

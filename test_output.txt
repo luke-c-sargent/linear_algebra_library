@@ -20,3 +20,5 @@ Vector2 Tests:
 	SUCCESS: 23 == 23
 	SUCCESS: 23 == 23
 	SUCCESS: 0.321751 == 0.321751
+	SUCCESS: 1 == 1
+	SUCCESS: 0 == 0
