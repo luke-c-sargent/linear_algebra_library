@@ -1,7 +1,9 @@
-----[Linear Algebra Library Test Suite]---
-	prefix symbols:
-	!! = test failure
-	DR = double rounding; possibly inaccurate
+----=======[Linear Algebra Library Test Suite]=======----
+|  prefix symbols:					|
+|	!! = test failure				|
+|	DR = double rounding: values differ by < 1e-15	|
+---------------------------------------------------------
+
 Vector2 Tests:
 	SUCCESS: 0 == 0
 	SUCCESS: 0 == 0
@@ -27,7 +29,7 @@ Vector2 Tests:
 	SUCCESS: 0.321751 == 0.321751
 	SUCCESS: 1 == 1
 	SUCCESS: 0 == 0
-END Vector2 Tests-------------------------
+[END Vector2 Tests-------------------------------------]
 
 Vector3 Tests:
 	SUCCESS: 0 == 0
@@ -60,5 +62,5 @@ Vector3 Tests:
 	SUCCESS: < 2, -4, 2 > == < 2, -4, 2 >
 	SUCCESS: 0 == 0
 	SUCCESS: 1 == 1
-END Vector3 Tests-------------------------
+[END Vector3 Tests-------------------------------------]
 

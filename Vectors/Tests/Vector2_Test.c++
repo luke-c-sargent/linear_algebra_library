@@ -87,5 +87,5 @@ void test_vector2(){
 	isequal(are_orthogonal(ortho1, ortho2), true);
 	isequal(are_orthogonal(ortho1, not_ortho), false);
 
-	std::cout << "END Vector2 Tests-------------------------\n" << std::endl;
+	std::cout << "[END Vector2 Tests-------------------------------------]\n" << std::endl;
 }

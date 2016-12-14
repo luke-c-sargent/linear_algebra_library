@@ -110,5 +110,5 @@ void test_vector3(){
 		are_orthogonal(cross2.cross_product(cross1), cross2),
 		true);
 
-	std::cout << "END Vector3 Tests-------------------------\n" << std::endl;
+	std::cout << "[END Vector3 Tests-------------------------------------]\n" << std::endl;
 }

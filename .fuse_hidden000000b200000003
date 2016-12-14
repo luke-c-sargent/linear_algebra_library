@@ -12,10 +12,9 @@
 
 int main(){
 
-	std::cout << "----=======[Linear Algebra Library Test Suite]=======----" << std::endl;
-	std::cout << "|  prefix symbols:\t\t\t\t\t|\n|\t!! = test failure\t\t\t\t|\n" << 
-				"|\tDR = double rounding: values differ by < 1e-15\t|" << std::endl <<
-				"---------------------------------------------------------\n" << std::endl;
+	std::cout << "----[Linear Algebra Library Test Suite]---" << std::endl;
+	std::cout << "	prefix symbols:\n\t!! = test failure\n" << 
+				"\tDR = double rounding; possibly inaccurate" << std::endl;
 	test_vector2();
 	test_vector3();
 }
