@@ -71,7 +71,44 @@ void test_vector3(){
 	isequal(unit.magnitude(), 1.0);
 	isequal(unit*v3_unit.magnitude(), v3_unit);
 
+	// dot product
+	Vector3 dp1(1,2,3);
+	Vector3 dp2(3,2,1);
+	isequal(dp1.dot_product(dp2), 3*1 + 2*2 + 1*3);
+	//commutativity
+	isequal(dp1.dot_product(dp2), dp2.dot_product(dp1));
 
+	//planar angle in radians
+	isequal(planar_angle(Vector3(1,-1,2),Vector3(1,1,1)), 
+		1.07991364850558525065041281038291199);// value from wolframalpha
+
+	// vector orthogonality
+	Vector3 ortho1(1,0,0);
+	Vector3 ortho2(0,1,0);
+	Vector3 ortho3(0,0,1);
+	Vector3 not_ortho(1,1,1);
+	isequal(are_orthogonal(ortho1, ortho3) && are_orthogonal(ortho1, ortho3) && 
+		are_orthogonal(ortho2,ortho3), true);
+	isequal(are_orthogonal(ortho1, not_ortho) || are_orthogonal(ortho2, not_ortho) || 
+		are_orthogonal(ortho3, not_ortho), false );
+
+	// cross product
+	Vector3 cross1(1,2,3);
+	Vector3 cross2(2,2,2);
+	Vector3 c1_cross_c2(-2,4,-2);
+	Vector3 c2_cross_c1(2,-4,2);
+	isequal(cross1.cross_product(cross2), c1_cross_c2);
+	isequal(cross2.cross_product(cross1), c2_cross_c1);
+	//non-commutativity
+	isequal(cross1.cross_product(cross2) == cross2.cross_product(cross1),
+		false);
+	// orthogonality of cross products
+	isequal(
+		are_orthogonal(cross1.cross_product(cross2), cross1) &&
+		are_orthogonal(cross1.cross_product(cross2), cross2) &&
+		are_orthogonal(cross2.cross_product(cross1), cross1) &&
+		are_orthogonal(cross2.cross_product(cross1), cross2),
+		true);
 
 	std::cout << "END Vector3 Tests-------------------------\n" << std::endl;
 }

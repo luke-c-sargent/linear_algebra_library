@@ -51,8 +51,10 @@ public:
 	}
 
 	Vector3 cross_product(const Vector3& v3) const {
-		exit(1);
-		// TODO
+		double _x = y*v3.get_z() - z*v3.get_y();
+		double _y = z*v3.get_x() - x*v3.get_z();
+		double _z = x*v3.get_y() - y*v3.get_x();
+		return Vector3(_x,_y,_z);
 	}
 
 	// operators
@@ -90,5 +92,9 @@ public:
 std::ostream& operator << (std::ostream& os, const Vector3& v3);
 
 Vector3 operator * (double scalar, const Vector3& v3);
+
+double planar_angle(const Vector3& v3_a, const Vector3& v3_b);
+
+bool are_orthogonal(const Vector3& v3_a, const Vector3& v3_b);
 
 } // end namespace LAL

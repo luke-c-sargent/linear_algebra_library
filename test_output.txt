@@ -49,7 +49,16 @@ Vector3 Tests:
 	SUCCESS: 3.4641 == 3.4641
 	SUCCESS: 56.3028 == 56.3028
 	SUCCESS: 1 == 1
-DR	SUCCESS: 1 == 1
+[DR]	SUCCESS: 1 == 1
 	SUCCESS: < -5, 0, 10 > == < -5, 0, 10 >
+	SUCCESS: 10 == 10
+	SUCCESS: 10 == 10
+[DR]	SUCCESS: 1.07991 == 1.07991
+	SUCCESS: 1 == 1
+	SUCCESS: 0 == 0
+	SUCCESS: < -2, 4, -2 > == < -2, 4, -2 >
+	SUCCESS: < 2, -4, 2 > == < 2, -4, 2 >
+	SUCCESS: 0 == 0
+	SUCCESS: 1 == 1
 END Vector3 Tests-------------------------
 

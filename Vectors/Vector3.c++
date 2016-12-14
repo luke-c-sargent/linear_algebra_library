@@ -21,4 +21,4 @@ bool are_orthogonal(const Vector3& v3_a, const Vector3& v3_b){
 	return (v3_a.dot_product(v3_b) == 0.0);
 }
 
-}
+}// END LAL namespace
