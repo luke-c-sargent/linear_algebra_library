@@ -11,4 +11,10 @@ std::ostream& operator << (std::ostream& os, const Matrix3x3& m){
 		m.get_x3() << ", " << m.get_y3() << ", " << m.get_z3() << "]]";
 }
 
+Matrix3x3 operator * (double s, const Matrix3x3& m){
+	return Matrix3x3(s*m.x1,s*m.y1,s*m.z1,
+					 s*m.x2,s*m.y2,s*m.z2,
+					 s*m.x3,s*m.y3,s*m.z3);
+}
+
 }

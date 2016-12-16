@@ -95,8 +95,6 @@ public:
 
 std::ostream& operator << (std::ostream& os, const Vector3& v3);
 
-Vector3 operator * (double scalar, const Vector3& v3);
-
 double planar_angle(const Vector3& v3_a, const Vector3& v3_b);
 
 bool are_orthogonal(const Vector3& v3_a, const Vector3& v3_b);

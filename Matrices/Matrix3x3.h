@@ -30,6 +30,10 @@ public:
 	Vector3 get_row2() const { return Vector3(x2,y2,z2);}
 	Vector3 get_row3() const { return Vector3(x3,y3,z3);}
 
+	Vector3 get_col1() const { return Vector3(x1,x2,x3);}
+	Vector3 get_col2() const { return Vector3(y1,y2,y3);}
+	Vector3 get_col3() const { return Vector3(z1,z2,z3);}
+
 	double get_x1() const { return x1; }
 	double get_y1() const { return y1; }
 	double get_z1() const { return z1; }
@@ -66,8 +70,46 @@ public:
 	void set_y3(double _y3){ y3=_y3;}
 	void set_z3(double _z3){ z3=_z3;}
 
+	Matrix3x3 get_transpose() const {
+		return Matrix3x3(x1,x2,x3,y1,y2,y3,z1,z2,z3);
+	}
 
 	// operators
+	friend Matrix3x3 operator * (double s, const Matrix3x3& m);
+
+	Matrix3x3 operator * (const Matrix3x3& m) const {
+		double _x1, _y1, _z1, _x2, _y2, _z2, _x3, _y3, _z3;
+		_x1 = get_row1().dot_product(m.get_col1());
+		_y1 = get_row1().dot_product(m.get_col2());
+		_z1 = get_row1().dot_product(m.get_col3());
+		_x2 = get_row2().dot_product(m.get_col1());
+		_y2 = get_row2().dot_product(m.get_col2());
+		_z2 = get_row2().dot_product(m.get_col3());
+		_x3 = get_row3().dot_product(m.get_col1());
+		_y3 = get_row3().dot_product(m.get_col2());
+		_z3 = get_row3().dot_product(m.get_col3());
+
+		return Matrix3x3(_x1, _y1, _z1,
+						 _x2, _y2, _z2,
+						 _x3, _y3, _z3);
+	}
+
+	Matrix3x3 operator +(const Matrix3x3& m) const {
+		return Matrix3x3(x1+m.get_x1(),y1+m.get_y1(),z1+m.get_z1(),
+						 x2+m.get_x2(),y2+m.get_y2(),z2+m.get_z2(),
+						 x3+m.get_x3(),y3+m.get_y3(),z3+m.get_z3());
+	}
+
+	Matrix3x3 operator - () const {
+		return -1*(*this);
+	}
+
+	Matrix3x3 operator -(const Matrix3x3& m) const {
+		return Matrix3x3(x1-m.get_x1(),y1-m.get_y1(),z1-m.get_z1(),
+						 x2-m.get_x2(),y2-m.get_y2(),z2-m.get_z2(),
+						 x3-m.get_x3(),y3-m.get_y3(),z3-m.get_z3());
+	}
+
 	bool operator == (const Matrix3x3& m3x3) const {
 		return (x1 == m3x3.get_x1()) &&
 				(y1 == m3x3.get_y1()) &&
@@ -83,6 +125,11 @@ public:
 	bool operator != (const Matrix3x3& m3x3) const {
 		return !(*this == m3x3);
 	}
+
+	Matrix3x3 operator * (double scalar) const {
+		return scalar*(*this);
+	}
+
 };
 
 std::ostream& operator << (std::ostream& os, const Matrix3x3& m);
