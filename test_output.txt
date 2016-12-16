@@ -64,3 +64,4 @@ Vector3 Tests:
 	SUCCESS: 1 == 1
 [END Vector3 Tests-------------------------------------]
 
+All [30] tests successful!

@@ -4,11 +4,11 @@
 #include "test_utils.hpp"
 #include "./Vectors/Tests/Vector2_Test.h"
 #include "./Vectors/Tests/Vector3_Test.h"
+#include <cstdlib>
 
 // TEST SUITE:
 //		Tests class construction, their member functions, and supporting functions.
 //		Output stored in 'test_output.txt' upon successful execution.
-
 
 int main(){
 
@@ -18,4 +18,11 @@ int main(){
 				"---------------------------------------------------------\n" << std::endl;
 	test_vector2();
 	test_vector3();
+
+	if(success)
+		std::cout << "All [" << success_count << "] tests successful!" << std::endl;
+	else
+		std::cout << "ERROR: [" << fail_count << "] OUT OF [" << success_count + fail_count << "] TESTS FAILED" << std::endl;
+	
+	return EXIT_SUCCESS;
 }

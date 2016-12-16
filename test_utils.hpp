@@ -2,6 +2,10 @@
 #include <sstream>
 #include <iostream>
 
+extern bool success;
+extern int fail_count;
+extern int success_count;
+
 template<class T>
 std::string stringify(const T& t)
 {
@@ -11,12 +15,17 @@ std::string stringify(const T& t)
 }
 
 template <typename T>
-void isequal(T first, T second){
+bool isequal(T first, T second){
 
-	if(first != second)
+	if(first != second){
 		std::cout << "!!\tFAILURE: " << stringify(first) << " != " << stringify(second) << std::endl;
-	else
+		success = false;
+		++fail_count;
+	}
+	else{
 		std::cout << "\tSUCCESS: " << stringify(first) << " == " << stringify(second) << std::endl;
+		++success_count;
+	}
 }
 
 void isequal(double first, double second);

@@ -57,6 +57,10 @@ public:
 		return Vector3(_x,_y,_z);
 	}
 
+	Vector3 projected_onto(const Vector3& v3) const {
+		return (*this)*(this->dot_product(v3) / pow(v3.magnitude(), 2) );
+	}
+
 	// operators
 	friend std::ostream& operator << (std::ostream& os, const Vector3& v3);
 	
