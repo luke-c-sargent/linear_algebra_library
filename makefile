@@ -3,22 +3,26 @@ HEADERS :=					\
 	./Vectors/Vectors.h 	\
 	./Vectors/Vector2.h 	\
 	./Vectors/Vector3.h 	\
-	./Vectors/Vector4.h
+	./Vectors/Vector4.h 	\
+	./Matrices/Matrix3x3.h
 
 SOURCES :=					\
 	./Vectors/Vector2.c++	\
-	./Vectors/Vector3.c++
+	./Vectors/Vector3.c++ 	\
+	./Matrices/Matrix3x3.c++
 
 TESTHEADERS:=							\
 	test_utils.hpp						\
 	./Vectors/Tests/Vector2_Test.h 		\
-	./Vectors/Tests/Vector3_Test.h
+	./Vectors/Tests/Vector3_Test.h 		\
+	./Matrices/Tests/Matrix3x3_Test.h
 
 TESTSOURCES:=							\
 	test.c++							\
 	test_utils.c++						\
 	./Vectors/Tests/Vector2_Test.c++ 	\
-	./Vectors/Tests/Vector3_Test.c++
+	./Vectors/Tests/Vector3_Test.c++ 	\
+	./Matrices/Tests/Matrix3x3_Test.c++
 
 G++FLAGS := -pedantic
 C++STD= c++11

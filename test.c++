@@ -4,6 +4,7 @@
 #include "test_utils.hpp"
 #include "./Vectors/Tests/Vector2_Test.h"
 #include "./Vectors/Tests/Vector3_Test.h"
+#include "./Matrices/Tests/Matrix3x3_Test.h"
 #include <cstdlib>
 
 // TEST SUITE:
@@ -16,8 +17,12 @@ int main(){
 	std::cout << "|  prefix symbols:\t\t\t\t\t|\n|\t!! = test failure\t\t\t\t|\n" << 
 				"|\tDR = double rounding: values differ by < 1e-15\t|" << std::endl <<
 				"---------------------------------------------------------\n" << std::endl;
+	// Vectors
 	test_vector2();
 	test_vector3();
+
+	// Matrices
+	test_matrix3x3();
 
 	if(success)
 		std::cout << "All [" << success_count << "] tests successful!" << std::endl;

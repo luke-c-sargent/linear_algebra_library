@@ -5,63 +5,89 @@
 ---------------------------------------------------------
 
 Vector2 Tests:
-	SUCCESS: 0 == 0
-	SUCCESS: 0 == 0
-	SUCCESS: 1 == 1
-	SUCCESS: 2 == 2
-	SUCCESS: 1 == 1
-	SUCCESS: 0 == 0
-	SUCCESS: < 3, 4 > == < 3, 4 >
-	SUCCESS: < 2, 1 > == < 2, 1 >
-	SUCCESS: < 1, 2 > == < 1, 2 >
-	SUCCESS: < 1.5, 2.5 > == < 1.5, 2.5 >
-	SUCCESS: < 2, 4 > == < 2, 4 >
-	SUCCESS: < 10, -10 > == < 10, -10 >
-	SUCCESS: < 0, 0 > == < 0, 0 >
-	SUCCESS: 0 == 0
-	SUCCESS: 6.40312 == 6.40312
-	SUCCESS: 100.045 == 100.045
-	SUCCESS: 1 == 1
-	SUCCESS: 1 == 1
-	SUCCESS: < -666, 777 > == < -666, 777 >
-	SUCCESS: 23 == 23
-	SUCCESS: 23 == 23
-	SUCCESS: 0.321751 == 0.321751
-	SUCCESS: 1 == 1
-	SUCCESS: 0 == 0
+   SUCCESS: 0 == 0
+   SUCCESS: 0 == 0
+   SUCCESS: 1 == 1
+   SUCCESS: 2 == 2
+   SUCCESS: 1 == 1
+   SUCCESS: 0 == 0
+   SUCCESS: < 3, 4 > == < 3, 4 >
+   SUCCESS: < 2, 1 > == < 2, 1 >
+   SUCCESS: < 1, 2 > == < 1, 2 >
+   SUCCESS: < 1.5, 2.5 > == < 1.5, 2.5 >
+   SUCCESS: < 2, 4 > == < 2, 4 >
+   SUCCESS: < 10, -10 > == < 10, -10 >
+   SUCCESS: < 0, 0 > == < 0, 0 >
+   SUCCESS: 0 == 0
+   SUCCESS: 6.40312 == 6.40312
+   SUCCESS: 100.045 == 100.045
+   SUCCESS: 1 == 1
+   SUCCESS: 1 == 1
+   SUCCESS: < -666, 777 > == < -666, 777 >
+   SUCCESS: 23 == 23
+   SUCCESS: 23 == 23
+   SUCCESS: 0.321751 == 0.321751
+   SUCCESS: 1 == 1
+   SUCCESS: 0 == 0
 [END Vector2 Tests-------------------------------------]
 
 Vector3 Tests:
-	SUCCESS: 0 == 0
-	SUCCESS: 0 == 0
-	SUCCESS: 0 == 0
-	SUCCESS: -1 == -1
-	SUCCESS: 2 == 2
-	SUCCESS: -3 == -3
-	SUCCESS: 1 == 1
-	SUCCESS: 0 == 0
-	SUCCESS: < 6, 6, 6 > == < 6, 6, 6 >
-	SUCCESS: < 2, 2, 2 > == < 2, 2, 2 >
-	SUCCESS: < 7, 7, 7 > == < 7, 7, 7 >
-	SUCCESS: < 2, 4, 6 > == < 2, 4, 6 >
-	SUCCESS: < 3, 3, 3 > == < 3, 3, 3 >
-	SUCCESS: < 10, -10, 20 > == < 10, -10, 20 >
-	SUCCESS: < 5, 5, 5 > == < 5, 5, 5 >
-	SUCCESS: 0 == 0
-	SUCCESS: 3.4641 == 3.4641
-	SUCCESS: 56.3028 == 56.3028
-	SUCCESS: 1 == 1
-[DR]	SUCCESS: 1 == 1
-	SUCCESS: < -5, 0, 10 > == < -5, 0, 10 >
-	SUCCESS: 10 == 10
-	SUCCESS: 10 == 10
-[DR]	SUCCESS: 1.07991 == 1.07991
-	SUCCESS: 1 == 1
-	SUCCESS: 0 == 0
-	SUCCESS: < -2, 4, -2 > == < -2, 4, -2 >
-	SUCCESS: < 2, -4, 2 > == < 2, -4, 2 >
-	SUCCESS: 0 == 0
-	SUCCESS: 1 == 1
+   SUCCESS: 0 == 0
+   SUCCESS: 0 == 0
+   SUCCESS: 0 == 0
+   SUCCESS: -1 == -1
+   SUCCESS: 2 == 2
+   SUCCESS: -3 == -3
+   SUCCESS: 1 == 1
+   SUCCESS: 0 == 0
+   SUCCESS: < 6, 6, 6 > == < 6, 6, 6 >
+   SUCCESS: < 2, 2, 2 > == < 2, 2, 2 >
+   SUCCESS: < 7, 7, 7 > == < 7, 7, 7 >
+   SUCCESS: < 2, 4, 6 > == < 2, 4, 6 >
+   SUCCESS: < 3, 3, 3 > == < 3, 3, 3 >
+   SUCCESS: < 10, -10, 20 > == < 10, -10, 20 >
+   SUCCESS: < 5, 5, 5 > == < 5, 5, 5 >
+   SUCCESS: 0 == 0
+   SUCCESS: 3.4641 == 3.4641
+   SUCCESS: 56.3028 == 56.3028
+   SUCCESS: 1 == 1
+DR|SUCCESS: 1 == 1
+   SUCCESS: < -5, 0, 10 > == < -5, 0, 10 >
+   SUCCESS: 10 == 10
+   SUCCESS: 10 == 10
+DR|SUCCESS: 1.07991 == 1.07991
+   SUCCESS: 1 == 1
+   SUCCESS: 0 == 0
+   SUCCESS: < -2, 4, -2 > == < -2, 4, -2 >
+   SUCCESS: < 2, -4, 2 > == < 2, -4, 2 >
+   SUCCESS: 0 == 0
+   SUCCESS: 1 == 1
 [END Vector3 Tests-------------------------------------]
 
-All [30] tests successful!
+Matrix3x3 Tests:
+   SUCCESS: 0 == 0
+   SUCCESS: 0 == 0
+   SUCCESS: 0 == 0
+   SUCCESS: 0 == 0
+   SUCCESS: 0 == 0
+   SUCCESS: 0 == 0
+   SUCCESS: 0 == 0
+   SUCCESS: 0 == 0
+   SUCCESS: 0 == 0
+   SUCCESS: < 0, 0, 0 > == < 0, 0, 0 >
+   SUCCESS: < 0, 0, 0 > == < 0, 0, 0 >
+   SUCCESS: < 0, 0, 0 > == < 0, 0, 0 >
+   SUCCESS: < -1, -2, -3 > == < -1, -2, -3 >
+   SUCCESS: < -4, -5, -6 > == < -4, -5, -6 >
+   SUCCESS: < -7, -8, -9 > == < -7, -8, -9 >
+   SUCCESS: < 1, 2, 3 > == < 1, 2, 3 >
+   SUCCESS: < 4, 5, 6 > == < 4, 5, 6 >
+   SUCCESS: < 7, 8, 9 > == < 7, 8, 9 >
+   SUCCESS: [[0, 1, 2],[3, 4, 5],[6, 7, 8]] == [[0, 1, 2],[3, 4, 5],[6, 7, 8]]
+   SUCCESS: 1 == 1
+   SUCCESS: 0 == 0
+   SUCCESS: 1 == 1
+   SUCCESS: [[6, 6, 6],[6, 6, 6],[6, 6, 6]] == [[6, 6, 6],[6, 6, 6],[6, 6, 6]]
+[END Matrix3x3 Tests-----------------------------------]
+
+All [77] tests successful!

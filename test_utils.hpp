@@ -18,12 +18,12 @@ template <typename T>
 bool isequal(T first, T second){
 
 	if(first != second){
-		std::cout << "!!\tFAILURE: " << stringify(first) << " != " << stringify(second) << std::endl;
+		std::cout << "!!|FAILURE: " << stringify(first) << " != " << stringify(second) << std::endl;
 		success = false;
 		++fail_count;
 	}
 	else{
-		std::cout << "\tSUCCESS: " << stringify(first) << " == " << stringify(second) << std::endl;
+		std::cout << "   SUCCESS: " << stringify(first) << " == " << stringify(second) << std::endl;
 		++success_count;
 	}
 }
