@@ -1,5 +1,8 @@
 #pragma once
 
+#include <stdlib.h>
+#include <assert.h>
+
 #include <iostream>
 
 #include "../Vectors/Vector3.h"
@@ -30,9 +33,43 @@ public:
 	Vector3 get_row2() const { return Vector3(x2,y2,z2);}
 	Vector3 get_row3() const { return Vector3(x3,y3,z3);}
 
+	Vector3 get_row(int idx) const { 
+		switch(idx){
+			case 1:{
+				return get_row1();
+			}
+			case 2:{
+				return get_row2();
+			}
+			case 3:{
+				return get_row3();
+			}
+			default:{
+				std::cout << "ERROR: invalid get_row index " << idx << std::endl;
+			}
+		}
+	}
+
 	Vector3 get_col1() const { return Vector3(x1,x2,x3);}
 	Vector3 get_col2() const { return Vector3(y1,y2,y3);}
 	Vector3 get_col3() const { return Vector3(z1,z2,z3);}
+
+	Vector3 get_col(int idx) const { 
+		switch(idx){
+			case 1:{
+				return get_col1();
+			}
+			case 2:{
+				return get_col2();
+			}
+			case 3:{
+				return get_col3();
+			}
+			default:{
+				std::cout << "ERROR: invalid get_col index " << idx << std::endl;
+			}
+		}
+	}
 
 	double get_x1() const { return x1; }
 	double get_y1() const { return y1; }
@@ -58,6 +95,28 @@ public:
 		x3 = _r3.get_x();	y3 = _r3.get_y();	z3 = _r3.get_z();	
 	}
 
+	void set_row(int idx, Vector3 v){
+		switch (idx){
+			case 1:{
+				set_row1(v);
+				break;
+			}
+			case 2:{
+				set_row2(v);
+				break;
+			}
+			case 3:{
+				set_row3(v);
+				break;
+			}
+			default:{
+				std::cout << "ERROR: Matrix3x3 set_row index invalid: " << idx << std::endl;
+				exit(1);
+			}
+		}
+
+	}
+
 	void set_x1(double _x1){ x1=_x1;}
 	void set_y1(double _y1){ y1=_y1;}
 	void set_z1(double _z1){ z1=_z1;}
@@ -69,6 +128,36 @@ public:
 	void set_x3(double _x3){ x3=_x3;}
 	void set_y3(double _y3){ y3=_y3;}
 	void set_z3(double _z3){ z3=_z3;}
+
+	// elementary row operations
+	Matrix3x3 row_swap(int i, int j){
+		Matrix3x3 result = *this;
+		if (i < 0 || i > 3 || j < 0 || j > 3){
+			std::cout << "ERROR: Matrix3x3 row_swap( " << i << ", " << j << " ) out of bounds (1-3)" << std::endl;
+			exit(1);
+		}
+		if ( i != j){
+			Vector3 temp = result.get_row(i);
+			result.set_row(i, get_row(j));
+			result.set_row(j, temp);
+		}
+		return result;
+
+	}
+
+	Matrix3x3 scalar_row_multiply(double scalar, int row){
+		switch(row){
+			case(1):
+				return Matrix3x3(scalar*get_row1(), get_row2(), get_row3());
+			case(2):
+				return Matrix3x3(get_row1(), scalar*get_row2(), get_row3());
+			case(3):
+				return Matrix3x3(get_row1(), get_row2(), scalar*get_row3());
+		}
+	}
+
+
+
 
 	Matrix3x3 get_transpose() const {
 		return Matrix3x3(x1,x2,x3,y1,y2,y3,z1,z2,z3);

@@ -122,5 +122,32 @@ void test_matrix3x3(){
 				 3,6,9);
 	isequal(pre_tp.get_transpose(),tp);
 
+	// row swap
+	Matrix3x3 swap(1,2,3,
+				   4,5,6,
+				   7,8,9);
+	Matrix3x3 swap12 = swap.row_swap(1,2);
+	Matrix3x3 swap21 = swap.row_swap(2,1);
+	Matrix3x3 swap13 = swap.row_swap(1,3);
+	Matrix3x3 swap31 = swap.row_swap(3,1);
+	Matrix3x3 swap23 = swap.row_swap(2,3);
+	Matrix3x3 swap32 = swap.row_swap(3,2);
+
+	isequal( swap12, Matrix3x3(4,5,6,1,2,3,7,8,9));
+	isequal( swap21, Matrix3x3(4,5,6,1,2,3,7,8,9));
+	isequal( swap13, Matrix3x3(7,8,9,4,5,6,1,2,3));
+	isequal( swap31, Matrix3x3(7,8,9,4,5,6,1,2,3));
+	isequal( swap23, Matrix3x3(1,2,3,7,8,9,4,5,6));
+	isequal( swap32, Matrix3x3(1,2,3,7,8,9,4,5,6));
+
+	//scalar row multiply
+	Matrix3x3 s_mult(1,2,3,
+					 4,5,6,
+					 7,8,9);
+	double scalar = 0.5;
+	isequal(s_mult.scalar_row_multiply(scalar, 1), Matrix3x3(0.5,1,1.5,4,5,6,7,8,9));
+	isequal(s_mult.scalar_row_multiply(scalar, 2), Matrix3x3(1,2,3,2,2.5,3,7,8,9));
+	isequal(s_mult.scalar_row_multiply(scalar, 3), Matrix3x3(1,2,3,4,5,6,3.5,4,4.5));
+
 	std::cout << "[END Matrix3x3 Tests-----------------------------------]\n" << std::endl;
 }
