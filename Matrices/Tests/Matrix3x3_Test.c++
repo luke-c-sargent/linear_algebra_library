@@ -122,5 +122,13 @@ void test_matrix3x3(){
 				 3,6,9);
 	isequal(pre_tp.get_transpose(),tp);
 
+	// system of eqn solver
+	Matrix3x3 testeroo(3,2,-3,4,-3,6,1,0,-1);
+	Vector3 soln(-13,7,-5);
+	Vector3 expected_result(-2,1,3);
+	Vector3 result = testeroo.solve_linear_system(soln);
+	isequal(result, expected_result);
+
+
 	std::cout << "[END Matrix3x3 Tests-----------------------------------]\n" << std::endl;
 }

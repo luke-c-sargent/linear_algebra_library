@@ -12,12 +12,51 @@ class Vector3
 public:
 	Vector3(){}
 	Vector3(double _x, double _y, double _z): x(_x), y(_y), z(_z){}
-
+ 
 	// getters
 	double get_x() const {return x;}
 	double get_y() const {return y;}
 	double get_z() const {return z;}
 	
+	double get(int idx){
+		switch(idx){
+			case 1:{
+				return get_x();
+			}
+			case 2:{
+				return get_y();
+			}
+			case 3:{
+				return get_z();
+			}
+			default:{
+				std::cout << "ERROR: get index out of bounds: " << idx << std::endl;
+				exit(1);
+			}
+		}
+	}
+
+	void set(int idx, double value){
+		switch(idx){
+			case 1:{
+				set_x(value);
+				break;
+			}
+			case 2:{
+				set_y(value);
+				break;
+			}
+			case 3:{
+				set_z(value);
+				break;
+			}
+			default:{
+				std::cout << "ERROR: set index out of bounds: " << idx << std::endl;
+				exit(1);
+			}
+		}
+	}
+
 	// setters
 	void set_x(double _x){x=_x;}
 	void set_y(double _y){y=_y;}
