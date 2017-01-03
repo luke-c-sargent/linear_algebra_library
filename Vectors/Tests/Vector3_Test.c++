@@ -12,72 +12,72 @@ void test_vector3(){
 
 	//default zero vector, getter functions
 	Vector3 v3;
-	isequal(v3.get_x(), 0.0);
-	isequal(v3.get_y(), 0.0);
-	isequal(v3.get_z(), 0.0);
+	are_equal(v3.get_x(), 0.0);
+	are_equal(v3.get_y(), 0.0);
+	are_equal(v3.get_z(), 0.0);
 
 	//basic constructor
 	Vector3 v3_constr(-1,2,-3);
-	isequal(v3_constr.get_x(), -1.0);
-	isequal(v3_constr.get_y(), 2.0);
-	isequal(v3_constr.get_z(), -3.0);
+	are_equal(v3_constr.get_x(), -1.0);
+	are_equal(v3_constr.get_y(), 2.0);
+	are_equal(v3_constr.get_z(), -3.0);
 	
 	//vector equality
-	isequal(v3_constr == Vector3(-1,2,-3), true);
+	are_equal(v3_constr == Vector3(-1,2,-3), true);
 
 	//vector inequality
-	isequal(v3_constr != Vector3(-1,2,-3), false);
+	are_equal(v3_constr != Vector3(-1,2,-3), false);
 
 	//setter functions
 	Vector3 v3_set;
 	v3_set.set_x(6);
 	v3_set.set_y(6);
 	v3_set.set_z(6);
-	isequal(v3_set, Vector3(6,6,6));
+	are_equal(v3_set, Vector3(6,6,6));
 
 	//addition operator
-	isequal(Vector3(1,2,3)+Vector3(1,0,-1), Vector3(2,2,2));
+	are_equal(Vector3(1,2,3)+Vector3(1,0,-1), Vector3(2,2,2));
 
 	//stringify with output stream
-	isequal(stringify(Vector3(7.0, 7.0, 7.0)), stringify("< 7, 7, 7 >"));
+	are_equal(stringify(Vector3(7.0, 7.0, 7.0)), stringify("< 7, 7, 7 >"));
 
 	// multiplication of scalar
-	isequal(Vector3(1,2,3)*2.0, Vector3(2,4,6));
+	are_equal(Vector3(1,2,3)*2.0, Vector3(2,4,6));
 	// reverse multiplicand and multiplier
-	isequal(3.0*Vector3(1,1,1), Vector3(3,3,3));
+	are_equal(3.0*Vector3(1,1,1), Vector3(3,3,3));
 
 	//unary negation
-	isequal(-Vector3(-10,10,-20), Vector3(10,-10,20));
+	are_equal(-Vector3(-10,10,-20), Vector3(10,-10,20));
 
 	//subtraction
-	isequal(Vector3(3,5,7)-Vector3(-2,0,2), Vector3(5,5,5));
+	are_equal(Vector3(3,5,7)-Vector3(-2,0,2), Vector3(5,5,5));
 
 	// magnitude
-	isequal(Vector3().magnitude(), 0.0);
-	isequal(Vector3(2,2,2).magnitude(), sqrt(12));
+	are_equal(Vector3().magnitude(), 0.0);
+	are_equal(Vector3(2,2,2).magnitude(), sqrt(12));
 
 	// normalize vector
 	Vector3 v3_norm(-3,5,56);
 	double mag_from_fn = v3_norm.magnitude();
 	double mag_from_norm = v3_norm.normalize();
-	isequal(mag_from_norm, mag_from_fn);
-	isequal(v3_norm.magnitude(), 1.0);
+	are_equal(mag_from_norm, mag_from_fn);
+	are_equal(v3_norm.magnitude(), 1.0);
 
 	// get unit vector
 	Vector3 v3_unit(-5,0,10);
 	Vector3 unit = v3_unit.unit_vector();
-	isequal(unit.magnitude(), 1.0);
-	isequal(unit*v3_unit.magnitude(), v3_unit);
+	are_equal(unit.magnitude(), 1.0);
+	are_equal(unit*v3_unit.magnitude(), v3_unit);
 
 	// dot product
 	Vector3 dp1(1,2,3);
 	Vector3 dp2(3,2,1);
-	isequal(dp1.dot_product(dp2), 3*1 + 2*2 + 1*3);
+	are_equal(dp1.dot_product(dp2), 3*1 + 2*2 + 1*3);
 	//commutativity
-	isequal(dp1.dot_product(dp2), dp2.dot_product(dp1));
+	are_equal(dp1.dot_product(dp2), dp2.dot_product(dp1));
 
 	//planar angle in radians
-	isequal(planar_angle(Vector3(1,-1,2),Vector3(1,1,1)), 
+	are_equal(planar_angle(Vector3(1,-1,2),Vector3(1,1,1)), 
 		1.07991364850558525065041281038291199);// value from wolframalpha
 
 	// vector orthogonality
@@ -85,9 +85,9 @@ void test_vector3(){
 	Vector3 ortho2(0,1,0);
 	Vector3 ortho3(0,0,1);
 	Vector3 not_ortho(1,1,1);
-	isequal(are_orthogonal(ortho1, ortho3) && are_orthogonal(ortho1, ortho3) && 
+	are_equal(are_orthogonal(ortho1, ortho3) && are_orthogonal(ortho1, ortho3) && 
 		are_orthogonal(ortho2,ortho3), true);
-	isequal(are_orthogonal(ortho1, not_ortho) || are_orthogonal(ortho2, not_ortho) || 
+	are_equal(are_orthogonal(ortho1, not_ortho) || are_orthogonal(ortho2, not_ortho) || 
 		are_orthogonal(ortho3, not_ortho), false );
 
 	// cross product
@@ -95,13 +95,13 @@ void test_vector3(){
 	Vector3 cross2(2,2,2);
 	Vector3 c1_cross_c2(-2,4,-2);
 	Vector3 c2_cross_c1(2,-4,2);
-	isequal(cross1.cross_product(cross2), c1_cross_c2);
-	isequal(cross2.cross_product(cross1), c2_cross_c1);
+	are_equal(cross1.cross_product(cross2), c1_cross_c2);
+	are_equal(cross2.cross_product(cross1), c2_cross_c1);
 	//non-commutativity
-	isequal(cross1.cross_product(cross2) == cross2.cross_product(cross1),
+	are_equal(cross1.cross_product(cross2) == cross2.cross_product(cross1),
 		false);
 	// orthogonality of cross products
-	isequal(
+	are_equal(
 		are_orthogonal(cross1.cross_product(cross2), cross1) &&
 		are_orthogonal(cross1.cross_product(cross2), cross2) &&
 		are_orthogonal(cross2.cross_product(cross1), cross1) &&

@@ -15,7 +15,7 @@ std::string stringify(const T& t)
 }
 
 template <typename T>
-bool isequal(T first, T second){
+bool are_equal(T first, T second){
 
 	if(first != second){
 		std::cout << "!!|FAILURE: " << stringify(first) << " != " << stringify(second) << std::endl;
@@ -28,4 +28,4 @@ bool isequal(T first, T second){
 	}
 }
 
-void isequal(double first, double second);
+void are_equal(double first, double second);

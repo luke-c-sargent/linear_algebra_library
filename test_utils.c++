@@ -24,7 +24,7 @@ bool double_approx_equals(double first, double second){
 	}
 }
 
-void isequal(double first, double second)
+void are_equal(double first, double second)
 {
 	double_approx_equals(first, second);
 }
