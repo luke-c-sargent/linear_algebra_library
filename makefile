@@ -3,7 +3,6 @@ HEADERS :=					\
 	./Vectors/Vectors.h 	\
 	./Vectors/Vector2.h 	\
 	./Vectors/Vector3.h 	\
-	./Vectors/Vector4.h 	\
 	./Matrices/Matrix3x3.h
 
 SOURCES :=					\
